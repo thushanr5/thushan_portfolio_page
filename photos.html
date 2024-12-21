@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: black;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .blur-load {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blur-load img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            filter: blur(20px);
+            transition: opacity 0.5s ease, filter 0.5s ease;
+        }
+
+        .blur-load img.loaded {
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        .blur-load::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            filter: blur(20px);
+            transition: opacity 0.5s ease;
+            opacity: 1;
+        }
+
+        .blur-load img.loaded + ::before {
+            opacity: 0;
+        }
+
+        .blur-load:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 10px;
+            color: #fff;
+            font-size: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .blur-load:hover .caption {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .grid {
+                gap: 10px;
+            }
+
+            .caption {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .caption {
+                font-size: 0.8rem;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Good Eats</h1>
+</header>
+
+<div class="grid">
+    <div class="blur-load" style="background-image: url('/img/fxn 2024-07-22 210840.876 2.jpg');">
+        <img src="/img/fxn 2024-07-22 210840.876 2.jpg" loading="lazy" alt="Beautiful Landscape">
+        <div class="caption">Kung Pao Chicken</div>
+    </div>
+    <div class="blur-load" style="background-image: url('/img/fxn 2024-07-28 221736.180 4.jpg');">
+        <img src="/img/fxn 2024-07-28 221736.180 4.jpg" loading="lazy" alt="Mountain Range">
+        <div class="caption">Bagels</div>
+    </div>
+    <div class="blur-load" style="background-image: url('/img/IMG_5334 2.jpg');">
+        <img src="/img/IMG_5334 2.jpg" loading="lazy" alt="Sunset Beach">
+        <div class="caption">Sushi</div>
+    </div>
+    <div class="blur-load" style="background-image: url('/img/IMG_5334 2.jpg');">
+        <img src="/img/egg.jpg" loading="lazy" alt="Sunset Beach">
+        <div class="caption">Poached Egg on Toast</div>
+    </div>
+    <div class="blur-load" style="background-image: url('/img/IMG_5334 2.jpg');">
+        <img src="/img/nachobowl.jpg" loading="lazy" alt="Sunset Beach">
+        <div class="caption">Chicken Chipotle Bowl</div>
+    </div>
+    <div class="blur-load" style="background-image: url('/img/IMG_5334 2.jpg');">
+        <img src="/img/burrito.jpg" loading="lazy" alt="Sunset Beach">
+        <div class="caption">Burrito</div>
+    </div>
+    <div class="blur-load" style="background-image: url('/img/IMG_5334 2.jpg');">
+        <img src="/img/friedrice.jpg" loading="lazy" alt="Sunset Beach">
+        <div class="caption">Hibachi Fried Rice</div>
+    </div>
+    <div class="blur-load" style="background-image: url('/img/IMG_5334 2.jpg');">
+        <img src="/img/salmonbowl.jpg" loading="lazy" alt="Sunset Beach">
+        <div class="caption">Salmon Bowl</div>
+    </div>
+    <div class="blur-load" style="background-image: url('/img/IMG_5334 2.jpg');">
+        <img src="/img/pastabowl.jpg" loading="lazy" alt="Sunset Beach">
+        <div class="caption">Pasta</div>
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle the transition from blurred placeholder to full image
+    document.addEventListener("DOMContentLoaded", () => {
+        const images = document.querySelectorAll(".blur-load img");
+        images.forEach(img => {
+            img.addEventListener("load", () => {
+                img.classList.add("loaded");
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

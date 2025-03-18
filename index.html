@@ -1,68 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Hi, I'm Thushan and I enjoy cooking, going to the gym, late-night walks, and music." />
-    <meta
-      property="og:description"
-      content="Hi, I'm Thushan and I enjoy cooking, going to the gym, late-night walks, and music."
-    />
-    <meta property="og:title" content="Thushan" />
-    <meta property="og:url" content="http://thushan.xyz/" />
-    <meta property="og:site_name" content="Thushan" />
-
-    <title>Thushan Ranasinghe</title>
-
-    <style>
-      body {
-        line-height: 1.3;
-        margin: auto;
-        max-width: 625px;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thushan R | Software Engineer</title>
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --text-color: #333;
+      --background-color: #f8f9fa;
+      --card-background: #ffffff;
+      --border-radius: 8px;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.3s;
+    }
+    
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+    
+    .hero {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .section {
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .project-card {
+      background: var(--card-background);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .project-card-content {
+      padding: 1.5rem;
+    }
+    
+    .project-card h3 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .project-card h3 a {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      transition: color 0.3s;
+    }
+    
+    .project-card h3 a:hover {
+      color: #0056b3;
+    }
+    
+    .project-card p {
+      color: #666;
+    }
+    
+    .project-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    
+    .project-card .tag {
+      background: #e9ecef;
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+    }
+    
+    .work-experience {
+      background: var(--card-background);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+    
+    .work-experience h3 {
+      margin-top: 0;
+    }
+    
+    .work-experience .company {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    
+    .work-experience .duration {
+      color: #666;
+      font-style: italic;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
       }
-
-      #root {
-        margin: 15px;
-        margin-top: 80px;
-        margin-bottom: 50px;
+      
+      nav ul {
+        margin-top: 1rem;
       }
-    </style>
-  </head>
-  <body>
-    <div id="root">
-      <h1>Thushan Ranasinghe</h1>
-      <p>
-        Hi, my name is Thushan Ranasinghe. I currently live in Maryland and I enjoy cooking, going to the gym, late-night walks, and music. You can click <a href="photos.html" target="_blank">here</a> to view some of my favorite top food photos.
-      </p>
-      <p>
-        I'm currently a CS Student at the Univeristy of Maryland College Park
-        and I'm also minoring in statistics. I'm interested in Systems + ML. Previously I've worked at the
-        <a href="https://www.cs.umd.edu/" target="_blank">UMD CS Department</a> as an Undergraduate Research Assistant, 
-        at <a href="https://www.radian.com/" target="_blank">Radian</a> as a Dev Ops Intern, and at the
-        <a href="https://ncifrederick.cancer.gov/Default.aspx" target="_blank">National Cancer Institute</a> as a Software Engineer Intern.
-      </p>
-      <p>
-        I'm also very excited to work at <a href="https://www.collinsaerospace.com/">Collins Aerospace</a> this upcomming summer as a Software Engineer Intern.
-      </p>
-      <p style="margin-bottom: 0">
-        Here's a list of foods I enjoy cooking / baking:
-      </p>
-      <ul style="margin-top: 0">
-        <li>Mexican / Middle Eastern Chicken + Veggie Bowls</li>
-        <li>Pancakes</li>
-        <li>Alfredo Pasta</li>
-        <li>Homemade Bagels</li>
-        <li>Fish Tacos</li>
-      </ul>
-
-      <p style="margin-bottom: 0">
-        Of course, I'm always exploring new recipes and cuisines to try out and I'd love reccomendations.
-      </p>
-
-      <p style="margin-bottom: 0">Feel free to connect / reach out:</p>
-      <p style="margin-top: 0">
-        <a href="mailto:thushanr32@gmail.com" target="_blank">Email</a> |
-        <a href="https://www.linkedin.com/in/thushan-ranasinghe/" target="_blank">Linkedin</a>
-      </p>
-    </div>
-  </body>
+      
+      nav ul li {
+        margin: 0 0.75rem;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .projects {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">TR</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <section class="hero" id="about">
+      <h1>Hi, I'm Thushan Ranasinghe</h1>
+      <p>A UMD CS Student and Software Engineer, passionate about statistics, ML, and building scalable applications. I have experience in full-stack development, cloud technologies, and machine learning.</p>
+    </section>
+    
+    <section class="section" id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <div class="project-card-content">
+            <h3>
+              VSCOify
+              <a href="https://github.com/thushanr/vscoify" target="_blank" title="View on GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+            </h3>
+            <p>A Chrome extension allowing photographers to extract high-quality photos from a user's VSCO page with a simple click. Streamlines the process of saving inspirational photography for reference.</p>
+            <div class="tags">
+              <span class="tag">Chrome Extension</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Jest Unit Testing</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">Fetch API</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-card-content">
+            <h3>Portfolio Performance Tracker
+                <a href="https://github.com/thushanr/vscoify" target="_blank" title="View on GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </a>
+            </h3>
+            <p>A web application to track investment portfolio performance with visualizations and analytics.</p>
+            <div class="tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-card-content">
+            <h3>AI Image Generation
+                <a href="https://github.com/thushanr/vscoify" target="_blank" title="View on GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </a>
+            </h3>
+            <p>Image generation platform using OpenAI's DALL-E API with custom prompts and styles.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">OpenAI API</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section" id="experience">
+      <h2 class="section-title">Work Experience</h2>
+      
+      <div class="work-experience">
+        <h3>Software Engineer Intern</h3>
+        <p class="company">Collins Aerospace (RTX)</p>
+        <p class="duration">June 2025 - Aug 2025</p>
+        <p>Incomming Summer Internship</p>
+      </div>
+      
+      <div class="work-experience">
+        <h3>Undergraduate Research Assistant</h3>
+        <p class="company">UMD CS Department</p>
+        <p class="duration">Aug 2024- Dec 2024</p>
+        <p>Optimized HCI Techniques + LLM Research under Professor Fumeng Yangs</p>
+      </div>
+      
+      <div class="work-experience">
+        <h3>Dev Ops Intern</h3>
+        <p class="company">Radian</p>
+        <p class="duration">May 2024 - Aug 2024</p>
+        <p>Developed JenkinsFiles + AWS/Azure Pipelines to expedite workflow for developers on various teams</p>
+      </div>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; Thushan Ranasinghe | 2025 </p>
+  </footer>
+</body>
 </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thushan Ranasinghe</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Thushan Ranasinghe</h1>
+      <nav class="main-nav">
+        <a href="/">main</a>
+        <a href="/work">work</a>
+      </nav>
+      <div class="intro">
+        <p>I'm currently an Undergraduate student at the University of Maryland College Park studying Computer Science and Statistics. I'm graduating in December 2026.</p>
+        <p>I'm broadly interested in data science, statistics, and software engineering, particularly in building applications that make a difference.</p>
+        <p>For more on my work, check out the highlights <a href="/work">here</a>.</p>
+        <button class="details-toggle" onclick="toggleDetails()">
+          <span class="toggle-text">View Details</span>
+          <span class="toggle-icon">→</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="details-panel" id="detailsPanel">
+      <div class="details-content">
+        <div class="section">
+          <h2>Background</h2>
+          <p>I'm passionate about turning data into insights and building software that makes a difference. I love exploring new technologies and collaborating on meaningful projects.</p>
+        </div>
+        
+        <div class="section">
+          <h2>Technical Skills</h2>
+          <div class="skills-list">
+            <div class="skill-group">
+              <h3>Programming Languages</h3>
+              <p>Python, JavaScript, Java, C++</p>
+            </div>
+            <div class="skill-group">
+              <h3>Data Science</h3>
+              <p>Pandas, NumPy, Scikit-learn, Matplotlib</p>
+            </div>
+            <div class="skill-group">
+              <h3>Web Technologies</h3>
+              <p>React, Node.js, HTML/CSS, SQL</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>Recent Projects</h2>
+          <div class="projects-list">
+            <div class="project-item">
+              <h3>VSCOify</h3>
+              <p>A Chrome extension that enhances the VSCO browsing experience. Built with JavaScript, HTML/CSS, and tested with Jest. Published on the Chrome Web Store.</p>
+              <div class="project-tech">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTML/CSS</span>
+                <span class="tech-tag">Jest</span>
+                <span class="tech-tag">Chrome Extension</span>
+              </div>
+            </div>
+            <div class="project-item">
+              <h3>MindMapify (UMD Bitcamp Hackathon)</h3>
+              <p>An AI chatbot that helps students with studying by connecting and chatting about their learning materials. Can generate flashcards for users to enhance their study experience.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">DeepSeek API</span>
+                <span class="tech-tag">Gemini API</span>
+                <span class="tech-tag">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="section">
+          <h2>Get in Touch</h2>
+          <div class="contact-list">
+            <div class="contact-item">
+              <span class="contact-label">LinkedIn:</span>
+              <span class="contact-value">linkedin.com/thushan-ranasinghe</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDetails() {
+      const panel = document.getElementById('detailsPanel');
+      const text = document.querySelector('.toggle-text');
+      const icon = document.querySelector('.toggle-icon');
+      
+      if (panel.classList.contains('open')) {
+        panel.classList.remove('open');
+        text.textContent = 'View Details';
+        icon.textContent = '→';
+      } else {
+        panel.classList.add('open');
+        text.textContent = 'Hide Details';
+        icon.textContent = '←';
+      }
+    }
+  </script>
+</body>
+</html>
